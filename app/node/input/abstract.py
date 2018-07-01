@@ -24,10 +24,15 @@ class AbstractIpAddressInput(TextInput):
         else:
             print('<<  User defocused')
         print(self)
-        print(value)
+        print(self.get_root_window())
+        win = self.get_root_window()
+        print(win)
+        print('--- end ON FOCUS ---')
 
     def on_text(self, instance, value):
-        print('The widget',  self, 'instance', instance, 'have:', value)
+        print('>> START on text: the widget',  self, 'instance', instance, 'have:', value)
+        print('--- end ON TEXT ---')
+        print()
 
     def on_enter(self, instance, value):
         """проверить правильность после нажатия ЕНТЕР"""

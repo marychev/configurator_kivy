@@ -17,11 +17,11 @@ class NodeWidget(BoxLayout):
         super().__init__()
         self.set_active()
 
-    container_home = ObjectProperty(None)
+    container_home = ObjectProperty()
     node_name_text_input = ObjectProperty()
     node_list = ObjectProperty()
 
-    ip_address_input = IpAddressInput()
+    ip_address_input = IpAddressInput(id='id_ip_address')
     mask_input = MaskInput()
     gateway_input = GatewayInput()
 

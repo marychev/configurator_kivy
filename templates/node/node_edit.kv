@@ -1,0 +1,80 @@
+NodeWidget:
+	container_home: container_home
+    padding: 20
+    spacing: 20
+
+    # -content ---
+    BoxLayout:
+        orientation: 'vertical'
+        id: container_home
+        size_hint: None, None
+        padding: 0, 20
+        spacing: 20
+        width: 400
+
+        Label:
+            text: 'Установка сетевых настроек'
+            font_size: 30
+
+        Label:
+            id: current_node
+            text: 'для ' # + root.get_ip_address()
+
+        GridLayout:
+            cols: 2
+            size_hint: 1, None
+            height: 30
+
+            CheckBox:
+                id: id_dhcp
+                # active: root.get_dhcp()
+                on_active: root.set_active()
+            Label:
+                text: 'Использовать DCHP'
+        GridLayout:
+            cols:1
+            size_hint: 1, None
+            height: 60
+
+            Label:
+                text: "IP адрес"
+            IpAddressInput:
+                focus: True
+
+        GridLayout:
+            cols:1
+            size_hint: 1, None
+            height: 60
+
+            Label:
+                text: "Маска подсети"
+            MaskInput:
+                id: id_mask_input
+
+        GridLayout:
+            cols:1
+            size_hint: 1, None
+            height: 60
+
+            Label:
+                text: "Основной шлюз"
+            GatewayInput:
+                id: id_gateway_input
+
+        # -footer btn ---
+        BoxLayout:
+            size_hint: None, None
+            height: 40
+            spacing: 20
+            width: 400
+
+            Button:
+                text: 'Назад'
+                size_hint_x: 15
+                on_release: app.next_screen('node/node_list')
+            Button:
+                text: 'Далее'
+                disabled: True
+                size_hint_x: 15
+                on_press: root.save_node()
+                # on_release: app.next_screen('node/save_info')

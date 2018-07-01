@@ -1,0 +1,73 @@
+#:kivy 1.8.0
+#:import datetime datetime
+#: import main mainkv
+
+
+RootWidget:
+    # import container_main
+    container_main: container_main
+
+    # fill the container
+    BoxLayout:
+        id: container_main
+        orientation: 'vertical'
+        padding: 0
+        spacing: 3
+
+        Label:
+            text: 'Создание биткоин кошелька'
+            font_size: 18
+            size_hint: 1, .2
+
+        GridLayout:
+            cols: 1
+            size_hint: 1, .5
+
+            Label:
+                text: "Вставьте новый или выберите накопитель куда сохранить файл кошелька"
+
+            GridLayout:
+                cols: 2
+                size_hint: None, None
+                CheckBox:
+                    group: 'ip_address'
+                    active: True
+                Label:
+                    text: 'F: [Flash Disk]'
+            GridLayout:
+                cols: 2
+                size_hint: None, .5
+                CheckBox:
+                    group: 'ip_address'
+                Label:
+                    text: 'V: [SD Card Name]'
+
+
+        BoxLayout:
+            size_hint_y: None
+            height: "80dp"
+
+            GridLayout:
+                cols: 1
+                Label:
+                    text: "Введите имя кошелька"
+                TextInput:
+                    id: name_purse
+            GridLayout:
+                cols: 1
+                Label:
+                    text: "Придумайти пароль для нового кошелька"
+                TextInput:
+                    id: password_purse
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.1
+
+            Button:
+                text: 'Назад'
+                on_release: app.next_screen('home')
+            Button:
+                text: 'Далее'
+                on_release: app.next_screen('bitcoin_purse/created')

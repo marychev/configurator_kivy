@@ -1,0 +1,43 @@
+#:kivy 1.8.0
+#:import datetime datetime
+#: import main mainkv
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import ListItemButton kivy.uix.listview.ListItemButton
+
+
+HomeWidget:
+	container_home: container_home
+    padding: 20
+    spacing: 20
+
+    BoxLayout:
+        orientation: 'vertical'
+        id: container_home
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 40
+            spacing: 20
+
+        Label:
+            text: 'Список нод'
+            font_size: 18
+            size_hint: 1, .2
+
+        ListView:
+            id: nodes_list_view
+            adapter:
+                ListAdapter(data=["169.123.321.0", "169.123.321.5", "434.123.343.533"], cls=main.NodeListButton)
+
+        BoxLayout:
+            size_hint_y: None
+            height: "40dp"
+            Button:
+                text: 'Назад'
+                size_hint_x: 15
+                on_release: app.next_screen('home')
+            Button:
+                text: 'Далее'
+                size_hint_x: 15
+                on_release: app.next_screen('node/node_edit')
+

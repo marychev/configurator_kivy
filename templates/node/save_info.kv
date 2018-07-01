@@ -1,0 +1,30 @@
+BoxLayout:
+    orientation: 'vertical'
+
+    Label:
+        text: 'Установка сетевых настроек'
+        font_size: 30
+    Label:
+        text: 'для 192.168.0.233'
+
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Сетевые настройки успешно сохранены!'
+            font_size: 24
+        Label:
+            text: 'DHCP: включен'
+        Label:
+            text: 'IP адрес: 192.168.0.222'
+        Label:
+            text: 'Маска подсети: 255.255.255.0'
+        Label:
+            text: 'Шлюз: 192.168.0.1'
+
+    BoxLayout:
+        size_hint_y: None
+        height: "40dp"
+        Button:
+            text: 'На главную'
+            size_hint_x: 15
+            on_release: app.next_screen('home')

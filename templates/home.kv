@@ -1,0 +1,33 @@
+#:kivy 1.11.0
+
+
+HomeWidget:
+	container_home: container_home
+    padding: 20
+    spacing: 20
+
+    BoxLayout:
+        orientation: 'vertical'
+        id: container_home
+
+        BoxLayout:
+            padding: 40
+            spacing: 20
+            orientation: 'vertical'
+
+            Label:
+                text: 'Конфигуратор Bitcoin нод "Brand"'
+                font_size: 30
+
+            Label:
+                text: 'Выберите действие:'
+            Button:
+                text: 'Настройка новой ноды'
+                on_release: app.next_screen('node/node_edit')
+            Button:
+                text: 'Список нод'
+                on_release: app.next_screen('node/node_list')
+            Button:
+                text: 'Создать Bitcoin кошелек'
+                on_release: app.next_screen('bitcoin_purse/create_bitcoin_purse')
+

@@ -1,0 +1,29 @@
+#: import main mainkv
+
+
+RootWidget:
+    # import container_main
+    container_main: container_main
+
+    # fill the container
+    BoxLayout:
+        id: container_main
+        orientation: 'vertical'
+        padding: 0
+        spacing: 3
+
+        Label:
+            text: 'Создание биткоин кошелька'
+            font_size: 28
+            size_hint: 1, .2
+
+        Label:
+            text: 'Кошелек "Сбережения" был успешно создан и сохранени на диск F:'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.1
+
+            Button:
+                text: 'Назад'
+                on_release: app.next_screen('home')

@@ -6,6 +6,7 @@ NodeWidget:
     # -content ---
     BoxLayout:
         orientation: 'vertical'
+        id: container_home
         size_hint: None, None
         padding: 0, 20
         spacing: 20
@@ -39,7 +40,7 @@ NodeWidget:
                 text: "IP адрес"
             IpAddressInput:
                 id: id_ip_address_input
-                text: str(root.id)
+
         GridLayout:
             cols:1
             size_hint: 1, None
@@ -60,21 +61,21 @@ NodeWidget:
             GatewayInput:
                 id: id_gateway_input
 
-    # -footer btn ---
-    BoxLayout:
-        size_hint: None, None
-        height: 40
-        spacing: 20
-        width: 400
+        # -footer btn ---
+        BoxLayout:
+            size_hint: None, None
+            height: 40
+            spacing: 20
+            width: 400
 
-        Button:
-            text: 'Назад'
-            size_hint_x: 15
-            on_release: app.next_screen('node/node_list')
-        Button:
-            id: id_more_btn
-            text: 'Далее'
-            disabled: True
-            size_hint_x: 15
-            on_press: root.save_node()
-            # on_release: app.next_screen('node/save_info')
+            Button:
+                text: 'Назад'
+                size_hint_x: 15
+                on_release: app.next_screen('node/node_list')
+            Button:
+                id: id_more_btn
+                text: 'Далее'
+                disabled: True
+                size_hint_x: 15
+                on_press: root.save_node()
+                # on_release: app.next_screen('node/save_info')

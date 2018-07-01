@@ -39,6 +39,7 @@ NodeWidget:
             Label:
                 text: "IP адрес"
             IpAddressInput:
+                id: id_ip_address_input
                 focus: True
 
         GridLayout:
@@ -73,6 +74,7 @@ NodeWidget:
                 size_hint_x: 15
                 on_release: app.next_screen('node/node_list')
             Button:
+                id: id_more_btn
                 text: 'Далее'
                 disabled: True
                 size_hint_x: 15

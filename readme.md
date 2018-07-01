@@ -1,11 +1,12 @@
-# INSTALL PROJECT: python3.6, kivy1.11
-# --------------------------------------------
+# Configurator for Alex
 
-git clone ....
+python3.6, kivy1.11
 
+### 
+    git clone https://github.com/marychev/configurator_kivy.git
 	cd configurator
 
-### imstall virtualenv and dependencies for projects 
+### install virtualenv and dependencies for projects 
 
 	sudo pip install --upgrade pip virtualenv setuptools
 	virtualenv --no-site-packages -p python3.6 venv
@@ -14,12 +15,12 @@ git clone ....
 
 ### commands for running project
 
-- firts console window:
-	python server/server.py
+- first console window:
+	`python server/server.py` - run server
 
 - second console window:
-	python main.py
+	`python main.py` - run program
 
-# ---------
-# - END - #
-# ------------------------------------------------------
+
+### - END - ###
+

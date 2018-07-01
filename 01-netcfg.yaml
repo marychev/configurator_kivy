@@ -1,0 +1,12 @@
+[b, b
+network:
+    version: 2
+    renderer: networkd
+    ethernets:
+        enp3s0:
+        addresses:
+            - 123/32
+        gateway4: 123
+        nameservers:
+            addresses: [123, 8.8.8.8, x.x.x.xxx]
+            ]

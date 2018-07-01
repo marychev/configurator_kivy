@@ -26,9 +26,7 @@ class NodeWidget(BoxLayout):
     gateway_input = GatewayInput()
 
     def set_active(self):
-        """
-        установить блокировку на поля. активация DHCP, кнопка далее
-        """
+        """установить блокировку на поля. активация DHCP, кнопка далее"""
         self.enabled_text_inputs()
         self.enabled_more()
 
@@ -44,18 +42,14 @@ class NodeWidget(BoxLayout):
                 self.ids['id_gateway_input'].disabled = True
 
     def enabled_more(self):
-        """
-        Активировать кнопку Далее
-        """
-        from app.node.input import (IpAddressInput, GatewayInput, MaskInput)
+        """Активировать кнопку Далее"""
+        if 'id_more_btn' in self.ids.keys():
+            ip_address_input = IpAddressInput(id='id_ip_address')
+            mask_input = MaskInput(id='id_mask')
+            gateway_input = GatewayInput(id='id_gateway')
 
-        ip_address_input = IpAddressInput(id='id_ip_address')
-        mask_input = MaskInput(id='id_mask')
-        gateway_input = GatewayInput(id='id_gateway')
-
-        print(ip_address_input.text)
-        print(mask_input.text)
-        print(gateway_input.text)
+            if ip_address_input.text is not None and mask_input.text is not None and gateway_input.text is not None:
+                self.ids['id_more_btn'].disabled = False
 
     def save_node(self):
         """сохранить настройки редактируемой ноды"""

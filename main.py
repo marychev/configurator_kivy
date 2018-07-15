@@ -8,6 +8,7 @@ from kivy.properties import ObjectProperty
 from kivy.uix.listview import ListItemButton
 
 # init apps for templates
+from app.bitcoin import BitcoinWidget
 from app.node import NodeWidget
 from app.home import HomeWidget
 

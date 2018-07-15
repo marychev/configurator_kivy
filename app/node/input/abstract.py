@@ -19,6 +19,9 @@ class AbstractIpAddressInput(TextInput):
         return super(AbstractIpAddressInput, self).insert_text(s, from_undo=from_undo)
 
     def on_focus(self, instance, value):
+        from app.node.node import NodeWidget
+        w = NodeWidget()
+        print(w)
         if value:
             print('>> User focused')
         else:
@@ -29,11 +32,11 @@ class AbstractIpAddressInput(TextInput):
         print(win)
         print('--- end ON FOCUS ---')
 
-    def on_text(self, instance, value):
-        print('>> START on text: the widget',  self, 'instance', instance, 'have:', value)
-        print('--- end ON TEXT ---')
-        print()
-
-    def on_enter(self, instance, value):
-        """проверить правильность после нажатия ЕНТЕР"""
-        print(self, instance, value)
+    # def on_text(self, instance, value):
+    #     print('>> START on text: the widget',  self, 'instance', instance, 'have:', value)
+    #     print('--- end ON TEXT ---')
+    #     print()
+    #
+    # def on_enter(self, instance, value):
+    #     """проверить правильность после нажатия ЕНТЕР"""
+    #     print(self, instance, value)

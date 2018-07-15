@@ -1,12 +1,13 @@
+#:kivy 1.11.0
+
+
 NodeWidget:
-	container_home: container_home
     padding: 20
     spacing: 20
 
     # -content ---
     BoxLayout:
         orientation: 'vertical'
-        id: container_home
         size_hint: None, None
         padding: 0, 20
         spacing: 20
@@ -78,4 +79,4 @@ NodeWidget:
                 disabled: True
                 size_hint_x: 15
                 on_press: root.save_node()
-                # on_release: app.next_screen('node/save_info')
+                on_release: app.next_screen('node/save_info')

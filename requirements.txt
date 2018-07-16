@@ -1,4 +1,4 @@
-Cython==0.28.3
-git+https://github.com/kivy/kivy.git@master
+# Cython
+# git+https://github.com/kivy/kivy.git@master
 netaddr
 ruamel.yaml

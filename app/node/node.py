@@ -1,5 +1,6 @@
+#! coding: utf-8 -*-
 import kivy
-kivy.require('1.11.0')
+kivy.require('1.10.0')
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty, StringProperty
 from netaddr import IPAddress

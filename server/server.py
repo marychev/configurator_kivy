@@ -1,3 +1,4 @@
+#! coding: utf-8 -*-
 ''' Async TCP server to make first tests of newly received GPS trackers '''
 
 import asyncore

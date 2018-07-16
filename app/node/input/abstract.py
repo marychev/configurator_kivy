@@ -1,3 +1,4 @@
+#! coding: utf-8 -*-
 import re
 from kivy.uix.textinput import TextInput
 
